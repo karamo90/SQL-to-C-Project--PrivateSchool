@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="25bcc6049b0c45eaa4a913f9874dcf3e" Name="Diagram1">
+        <EntityTypeShape EntityType="Karamolegkos_PrivateSchoolModel.AssignmentPerStudentPerCourse" Width="1.5" PointX="5.25" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Karamolegkos_PrivateSchoolModel.Assignment" Width="1.5" PointX="0.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Karamolegkos_PrivateSchoolModel.CourseAssignment" Width="1.5" PointX="3" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Karamolegkos_PrivateSchoolModel.Cours" Width="1.5" PointX="0.75" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Karamolegkos_PrivateSchoolModel.StudentAssignment" Width="1.5" PointX="5.25" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="Karamolegkos_PrivateSchoolModel.Student" Width="1.5" PointX="3" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Karamolegkos_PrivateSchoolModel.Trainer" Width="1.5" PointX="3" PointY="13.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Karamolegkos_PrivateSchoolModel.AllAssignment" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Karamolegkos_PrivateSchoolModel.AllCours" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Karamolegkos_PrivateSchoolModel.AllStudent" Width="1.5" PointX="5.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Karamolegkos_PrivateSchoolModel.AllTrainer" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Karamolegkos_PrivateSchoolModel.AssignmentsPerCourse" Width="1.5" PointX="7.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Karamolegkos_PrivateSchoolModel.AssignmentsPerCoursePerStudent" Width="1.5" PointX="7.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Karamolegkos_PrivateSchoolModel.StudentsPerCourse" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Karamolegkos_PrivateSchoolModel.StudentsWithMoreThanOneCourse" Width="1.5" PointX="9.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Karamolegkos_PrivateSchoolModel.TrainersPerCourse" Width="1.5" PointX="9.75" PointY="6.75" IsExpanded="true" />
+        <AssociationConnector Association="Karamolegkos_PrivateSchoolModel.fk_Assign1_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="Karamolegkos_PrivateSchoolModel.fk_Course1_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="Karamolegkos_PrivateSchoolModel.fk_Student1_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="Karamolegkos_PrivateSchoolModel.fk_Assign_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="Karamolegkos_PrivateSchoolModel.fk_Assignment_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="Karamolegkos_PrivateSchoolModel.fk_CourseAssi_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="Karamolegkos_PrivateSchoolModel.fk_StudentAssign_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="Karamolegkos_PrivateSchoolModel.StudentCourse" ManuallyRouted="false" />
+        <AssociationConnector Association="Karamolegkos_PrivateSchoolModel.TrainerCourse" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

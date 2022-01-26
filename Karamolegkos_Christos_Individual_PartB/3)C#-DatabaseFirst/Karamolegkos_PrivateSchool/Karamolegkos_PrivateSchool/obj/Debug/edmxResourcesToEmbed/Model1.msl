@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Karamolegkos_PrivateSchoolModelStoreContainer" CdmEntityContainer="Karamolegkos_PrivateSchoolEntities">
+    <EntitySetMapping Name="AssignmentPerStudentPerCourses">
+      <EntityTypeMapping TypeName="Karamolegkos_PrivateSchoolModel.AssignmentPerStudentPerCourse">
+        <MappingFragment StoreEntitySet="AssignmentPerStudentPerCourse">
+          <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+          <ScalarProperty Name="AssignmentId" ColumnName="AssignmentId" />
+          <ScalarProperty Name="CourseId" ColumnName="CourseId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Assignments">
+      <EntityTypeMapping TypeName="Karamolegkos_PrivateSchoolModel.Assignment">
+        <MappingFragment StoreEntitySet="Assignments">
+          <ScalarProperty Name="AssignmentId" ColumnName="AssignmentId" />
+          <ScalarProperty Name="TitleA" ColumnName="TitleA" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CourseAssignments">
+      <EntityTypeMapping TypeName="Karamolegkos_PrivateSchoolModel.CourseAssignment">
+        <MappingFragment StoreEntitySet="CourseAssignment">
+          <ScalarProperty Name="CourseId" ColumnName="CourseId" />
+          <ScalarProperty Name="AssignmentId" ColumnName="AssignmentId" />
+          <ScalarProperty Name="SubmissionDate" ColumnName="SubmissionDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Courses">
+      <EntityTypeMapping TypeName="Karamolegkos_PrivateSchoolModel.Cours">
+        <MappingFragment StoreEntitySet="Courses">
+          <ScalarProperty Name="CourseId" ColumnName="CourseId" />
+          <ScalarProperty Name="TitleC" ColumnName="TitleC" />
+          <ScalarProperty Name="Stream" ColumnName="Stream" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StudentAssignments">
+      <EntityTypeMapping TypeName="Karamolegkos_PrivateSchoolModel.StudentAssignment">
+        <MappingFragment StoreEntitySet="StudentAssignment">
+          <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+          <ScalarProperty Name="AssignmentId" ColumnName="AssignmentId" />
+          <ScalarProperty Name="OralMark" ColumnName="OralMark" />
+          <ScalarProperty Name="TotalMark" ColumnName="TotalMark" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Students">
+      <EntityTypeMapping TypeName="Karamolegkos_PrivateSchoolModel.Student">
+        <MappingFragment StoreEntitySet="Students">
+          <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="TutitionFees" ColumnName="TutitionFees" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Trainers">
+      <EntityTypeMapping TypeName="Karamolegkos_PrivateSchoolModel.Trainer">
+        <MappingFragment StoreEntitySet="Trainers">
+          <ScalarProperty Name="TrainerId" ColumnName="TrainerId" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AllAssignments">
+      <EntityTypeMapping TypeName="Karamolegkos_PrivateSchoolModel.AllAssignment">
+        <MappingFragment StoreEntitySet="AllAssignments">
+          <ScalarProperty Name="AssignmentId" ColumnName="AssignmentId" />
+          <ScalarProperty Name="TitleA" ColumnName="TitleA" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AllCourses">
+      <EntityTypeMapping TypeName="Karamolegkos_PrivateSchoolModel.AllCours">
+        <MappingFragment StoreEntitySet="AllCourses">
+          <ScalarProperty Name="CourseId" ColumnName="CourseId" />
+          <ScalarProperty Name="TitleC" ColumnName="TitleC" />
+          <ScalarProperty Name="Stream" ColumnName="Stream" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AllStudents">
+      <EntityTypeMapping TypeName="Karamolegkos_PrivateSchoolModel.AllStudent">
+        <MappingFragment StoreEntitySet="AllStudents">
+          <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="TutitionFees" ColumnName="TutitionFees" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AllTrainers">
+      <EntityTypeMapping TypeName="Karamolegkos_PrivateSchoolModel.AllTrainer">
+        <MappingFragment StoreEntitySet="AllTrainers">
+          <ScalarProperty Name="TrainerId" ColumnName="TrainerId" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AssignmentsPerCourses">
+      <EntityTypeMapping TypeName="Karamolegkos_PrivateSchoolModel.AssignmentsPerCourse">
+        <MappingFragment StoreEntitySet="AssignmentsPerCourse">
+          <ScalarProperty Name="Course_Title" ColumnName="Course Title" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Stream" ColumnName="Stream" />
+          <ScalarProperty Name="Asssignment_Title" ColumnName="Asssignment Title" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AssignmentsPerCoursePerStudents">
+      <EntityTypeMapping TypeName="Karamolegkos_PrivateSchoolModel.AssignmentsPerCoursePerStudent">
+        <MappingFragment StoreEntitySet="AssignmentsPerCoursePerStudent">
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Course_Title" ColumnName="Course Title" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Assignment_Title" ColumnName="Assignment Title" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StudentsPerCourses">
+      <EntityTypeMapping TypeName="Karamolegkos_PrivateSchoolModel.StudentsPerCourse">
+        <MappingFragment StoreEntitySet="StudentsPerCourse">
+          <ScalarProperty Name="TitleC" ColumnName="TitleC" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Stream" ColumnName="Stream" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StudentsWithMoreThanOneCourses">
+      <EntityTypeMapping TypeName="Karamolegkos_PrivateSchoolModel.StudentsWithMoreThanOneCourse">
+        <MappingFragment StoreEntitySet="StudentsWithMoreThanOneCourse">
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Total_Courses_Selected" ColumnName="Total Courses Selected" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TrainersPerCourses">
+      <EntityTypeMapping TypeName="Karamolegkos_PrivateSchoolModel.TrainersPerCourse">
+        <MappingFragment StoreEntitySet="TrainersPerCourse">
+          <ScalarProperty Name="TitleC" ColumnName="TitleC" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Stream" ColumnName="Stream" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="StudentCourse" TypeName="Karamolegkos_PrivateSchoolModel.StudentCourse" StoreEntitySet="StudentCourse">
+      <EndProperty Name="Courses">
+        <ScalarProperty Name="CourseId" ColumnName="CourseId" />
+      </EndProperty>
+      <EndProperty Name="Students">
+        <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="TrainerCourse" TypeName="Karamolegkos_PrivateSchoolModel.TrainerCourse" StoreEntitySet="TrainerCourse">
+      <EndProperty Name="Courses">
+        <ScalarProperty Name="CourseId" ColumnName="CourseId" />
+      </EndProperty>
+      <EndProperty Name="Trainers">
+        <ScalarProperty Name="TrainerId" ColumnName="TrainerId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <FunctionImportMapping FunctionImportName="CreateAssignment" FunctionName="Karamolegkos_PrivateSchoolModel.Store.CreateAssignment" />
+    <FunctionImportMapping FunctionImportName="CreateCourse" FunctionName="Karamolegkos_PrivateSchoolModel.Store.CreateCourse" />
+    <FunctionImportMapping FunctionImportName="CreateStudent" FunctionName="Karamolegkos_PrivateSchoolModel.Store.CreateStudent" />
+    <FunctionImportMapping FunctionImportName="CreateTrainer" FunctionName="Karamolegkos_PrivateSchoolModel.Store.CreateTrainer" />
+    <FunctionImportMapping FunctionImportName="InsertAssignmentPerStudentPerCourse" FunctionName="Karamolegkos_PrivateSchoolModel.Store.InsertAssignmentPerStudentPerCourse" />
+    <FunctionImportMapping FunctionImportName="InsertStudentPerCourse" FunctionName="Karamolegkos_PrivateSchoolModel.Store.InsertStudentPerCourse" />
+    <FunctionImportMapping FunctionImportName="InsertTrainerPerCourse" FunctionName="Karamolegkos_PrivateSchoolModel.Store.InsertTrainerPerCourse" />
+  </EntityContainerMapping>
+</Mapping>

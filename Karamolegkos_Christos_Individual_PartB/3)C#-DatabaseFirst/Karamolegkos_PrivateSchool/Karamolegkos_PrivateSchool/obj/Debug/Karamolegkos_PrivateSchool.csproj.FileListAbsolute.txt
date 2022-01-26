@@ -1,0 +1,11 @@
+C:\Users\karam\source\repos\Karamolegkos_PrivateSchool\Karamolegkos_PrivateSchool\bin\Debug\Karamolegkos_PrivateSchool.exe.config
+C:\Users\karam\source\repos\Karamolegkos_PrivateSchool\Karamolegkos_PrivateSchool\bin\Debug\Karamolegkos_PrivateSchool.exe
+C:\Users\karam\source\repos\Karamolegkos_PrivateSchool\Karamolegkos_PrivateSchool\bin\Debug\Karamolegkos_PrivateSchool.pdb
+C:\Users\karam\source\repos\Karamolegkos_PrivateSchool\Karamolegkos_PrivateSchool\bin\Debug\EntityFramework.dll
+C:\Users\karam\source\repos\Karamolegkos_PrivateSchool\Karamolegkos_PrivateSchool\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\karam\source\repos\Karamolegkos_PrivateSchool\Karamolegkos_PrivateSchool\bin\Debug\EntityFramework.xml
+C:\Users\karam\source\repos\Karamolegkos_PrivateSchool\Karamolegkos_PrivateSchool\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\karam\source\repos\Karamolegkos_PrivateSchool\Karamolegkos_PrivateSchool\obj\Debug\Karamolegkos_PrivateSchool.csproj.AssemblyReference.cache
+C:\Users\karam\source\repos\Karamolegkos_PrivateSchool\Karamolegkos_PrivateSchool\obj\Debug\Karamolegkos_PrivateSchool.csproj.CoreCompileInputs.cache
+C:\Users\karam\source\repos\Karamolegkos_PrivateSchool\Karamolegkos_PrivateSchool\obj\Debug\Karamolegkos_PrivateSchool.exe
+C:\Users\karam\source\repos\Karamolegkos_PrivateSchool\Karamolegkos_PrivateSchool\obj\Debug\Karamolegkos_PrivateSchool.pdb

@@ -1,0 +1,1124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Karamolegkos_PrivateSchoolModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AssignmentPerStudentPerCourse">
+          <Key>
+            <PropertyRef Name="StudentId" />
+            <PropertyRef Name="AssignmentId" />
+            <PropertyRef Name="CourseId" />
+          </Key>
+          <Property Name="StudentId" Type="int" Nullable="false" />
+          <Property Name="AssignmentId" Type="int" Nullable="false" />
+          <Property Name="CourseId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Assignments">
+          <Key>
+            <PropertyRef Name="AssignmentId" />
+          </Key>
+          <Property Name="AssignmentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TitleA" Type="char" MaxLength="20" Nullable="false" />
+          <Property Name="Description" Type="char" MaxLength="40" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CourseAssignment">
+          <Key>
+            <PropertyRef Name="CourseId" />
+            <PropertyRef Name="AssignmentId" />
+          </Key>
+          <Property Name="CourseId" Type="int" Nullable="false" />
+          <Property Name="AssignmentId" Type="int" Nullable="false" />
+          <Property Name="SubmissionDate" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Courses">
+          <Key>
+            <PropertyRef Name="CourseId" />
+          </Key>
+          <Property Name="CourseId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TitleC" Type="char" MaxLength="20" Nullable="false" />
+          <Property Name="Stream" Type="char" MaxLength="20" Nullable="false" />
+          <Property Name="Type" Type="char" MaxLength="20" Nullable="false" />
+          <Property Name="StartDate" Type="date" Nullable="false" />
+          <Property Name="EndDate" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="StudentAssignment">
+          <Key>
+            <PropertyRef Name="StudentId" />
+            <PropertyRef Name="AssignmentId" />
+          </Key>
+          <Property Name="StudentId" Type="int" Nullable="false" />
+          <Property Name="AssignmentId" Type="int" Nullable="false" />
+          <Property Name="OralMark" Type="int" Nullable="false" />
+          <Property Name="TotalMark" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="StudentCourse">
+          <Key>
+            <PropertyRef Name="StudentId" />
+            <PropertyRef Name="CourseId" />
+          </Key>
+          <Property Name="StudentId" Type="int" Nullable="false" />
+          <Property Name="CourseId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Students">
+          <Key>
+            <PropertyRef Name="StudentId" />
+          </Key>
+          <Property Name="StudentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FirstName" Type="char" MaxLength="20" Nullable="false" />
+          <Property Name="LastName" Type="char" MaxLength="20" Nullable="false" />
+          <Property Name="DateOfBirth" Type="date" Nullable="false" />
+          <Property Name="TutitionFees" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TrainerCourse">
+          <Key>
+            <PropertyRef Name="TrainerId" />
+            <PropertyRef Name="CourseId" />
+          </Key>
+          <Property Name="TrainerId" Type="int" Nullable="false" />
+          <Property Name="CourseId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Trainers">
+          <Key>
+            <PropertyRef Name="TrainerId" />
+          </Key>
+          <Property Name="TrainerId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FirstName" Type="char" MaxLength="20" Nullable="false" />
+          <Property Name="LastName" Type="char" MaxLength="20" Nullable="false" />
+          <Property Name="Subject" Type="char" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Karamolegkos_PrivateSchool.dbo.AllAssignments' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="AllAssignments">
+          <Key>
+            <PropertyRef Name="AssignmentId" />
+            <PropertyRef Name="TitleA" />
+            <PropertyRef Name="Description" />
+          </Key>
+          <Property Name="AssignmentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TitleA" Type="char" MaxLength="20" Nullable="false" />
+          <Property Name="Description" Type="char" MaxLength="40" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Karamolegkos_PrivateSchool.dbo.AllCourses' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="AllCourses">
+          <Key>
+            <PropertyRef Name="CourseId" />
+            <PropertyRef Name="TitleC" />
+            <PropertyRef Name="Stream" />
+            <PropertyRef Name="Type" />
+            <PropertyRef Name="StartDate" />
+            <PropertyRef Name="EndDate" />
+          </Key>
+          <Property Name="CourseId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TitleC" Type="char" MaxLength="20" Nullable="false" />
+          <Property Name="Stream" Type="char" MaxLength="20" Nullable="false" />
+          <Property Name="Type" Type="char" MaxLength="20" Nullable="false" />
+          <Property Name="StartDate" Type="date" Nullable="false" />
+          <Property Name="EndDate" Type="date" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Karamolegkos_PrivateSchool.dbo.AllStudents' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="AllStudents">
+          <Key>
+            <PropertyRef Name="StudentId" />
+            <PropertyRef Name="FirstName" />
+            <PropertyRef Name="LastName" />
+            <PropertyRef Name="DateOfBirth" />
+            <PropertyRef Name="TutitionFees" />
+          </Key>
+          <Property Name="StudentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FirstName" Type="char" MaxLength="20" Nullable="false" />
+          <Property Name="LastName" Type="char" MaxLength="20" Nullable="false" />
+          <Property Name="DateOfBirth" Type="date" Nullable="false" />
+          <Property Name="TutitionFees" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Karamolegkos_PrivateSchool.dbo.AllTrainers' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="AllTrainers">
+          <Key>
+            <PropertyRef Name="TrainerId" />
+            <PropertyRef Name="FirstName" />
+            <PropertyRef Name="LastName" />
+            <PropertyRef Name="Subject" />
+          </Key>
+          <Property Name="TrainerId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FirstName" Type="char" MaxLength="20" Nullable="false" />
+          <Property Name="LastName" Type="char" MaxLength="20" Nullable="false" />
+          <Property Name="Subject" Type="char" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Karamolegkos_PrivateSchool.dbo.AssignmentsPerCourse' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="AssignmentsPerCourse">
+          <Key>
+            <PropertyRef Name="Course Title" />
+            <PropertyRef Name="Type" />
+            <PropertyRef Name="Stream" />
+          </Key>
+          <Property Name="Course Title" Type="char" MaxLength="20" Nullable="false" />
+          <Property Name="Type" Type="char" MaxLength="20" Nullable="false" />
+          <Property Name="Stream" Type="char" MaxLength="20" Nullable="false" />
+          <Property Name="Asssignment Title" Type="char" MaxLength="20" />
+          <Property Name="Description" Type="char" MaxLength="40" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Karamolegkos_PrivateSchool.dbo.AssignmentsPerCoursePerStudent' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="AssignmentsPerCoursePerStudent">
+          <Key>
+            <PropertyRef Name="FirstName" />
+            <PropertyRef Name="LastName" />
+            <PropertyRef Name="Course Title" />
+            <PropertyRef Name="Type" />
+            <PropertyRef Name="Assignment Title" />
+            <PropertyRef Name="Description" />
+          </Key>
+          <Property Name="FirstName" Type="char" MaxLength="20" Nullable="false" />
+          <Property Name="LastName" Type="char" MaxLength="20" Nullable="false" />
+          <Property Name="Course Title" Type="char" MaxLength="20" Nullable="false" />
+          <Property Name="Type" Type="char" MaxLength="20" Nullable="false" />
+          <Property Name="Assignment Title" Type="char" MaxLength="20" Nullable="false" />
+          <Property Name="Description" Type="char" MaxLength="40" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Karamolegkos_PrivateSchool.dbo.StudentsPerCourse' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="StudentsPerCourse">
+          <Key>
+            <PropertyRef Name="TitleC" />
+            <PropertyRef Name="Type" />
+            <PropertyRef Name="Stream" />
+          </Key>
+          <Property Name="TitleC" Type="char" MaxLength="20" Nullable="false" />
+          <Property Name="Type" Type="char" MaxLength="20" Nullable="false" />
+          <Property Name="Stream" Type="char" MaxLength="20" Nullable="false" />
+          <Property Name="FirstName" Type="char" MaxLength="20" />
+          <Property Name="LastName" Type="char" MaxLength="20" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Karamolegkos_PrivateSchool.dbo.StudentsWithMoreThanOneCourse' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="StudentsWithMoreThanOneCourse">
+          <Key>
+            <PropertyRef Name="FirstName" />
+            <PropertyRef Name="LastName" />
+          </Key>
+          <Property Name="FirstName" Type="char" MaxLength="20" Nullable="false" />
+          <Property Name="LastName" Type="char" MaxLength="20" Nullable="false" />
+          <Property Name="Total Courses Selected" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Karamolegkos_PrivateSchool.dbo.TrainersPerCourse' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="TrainersPerCourse">
+          <Key>
+            <PropertyRef Name="TitleC" />
+            <PropertyRef Name="Type" />
+            <PropertyRef Name="Stream" />
+          </Key>
+          <Property Name="TitleC" Type="char" MaxLength="20" Nullable="false" />
+          <Property Name="Type" Type="char" MaxLength="20" Nullable="false" />
+          <Property Name="Stream" Type="char" MaxLength="20" Nullable="false" />
+          <Property Name="FirstName" Type="char" MaxLength="20" />
+          <Property Name="LastName" Type="char" MaxLength="20" />
+        </EntityType>
+        <Association Name="fk_Assign_Id">
+          <End Role="Assignments" Type="Self.Assignments" Multiplicity="1" />
+          <End Role="StudentAssignment" Type="Self.StudentAssignment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Assignments">
+              <PropertyRef Name="AssignmentId" />
+            </Principal>
+            <Dependent Role="StudentAssignment">
+              <PropertyRef Name="AssignmentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Assign1_Id">
+          <End Role="Assignments" Type="Self.Assignments" Multiplicity="1" />
+          <End Role="AssignmentPerStudentPerCourse" Type="Self.AssignmentPerStudentPerCourse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Assignments">
+              <PropertyRef Name="AssignmentId" />
+            </Principal>
+            <Dependent Role="AssignmentPerStudentPerCourse">
+              <PropertyRef Name="AssignmentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Assignment_Id">
+          <End Role="Assignments" Type="Self.Assignments" Multiplicity="1" />
+          <End Role="CourseAssignment" Type="Self.CourseAssignment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Assignments">
+              <PropertyRef Name="AssignmentId" />
+            </Principal>
+            <Dependent Role="CourseAssignment">
+              <PropertyRef Name="AssignmentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Course1_Id">
+          <End Role="Courses" Type="Self.Courses" Multiplicity="1" />
+          <End Role="AssignmentPerStudentPerCourse" Type="Self.AssignmentPerStudentPerCourse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Courses">
+              <PropertyRef Name="CourseId" />
+            </Principal>
+            <Dependent Role="AssignmentPerStudentPerCourse">
+              <PropertyRef Name="CourseId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_CourseAssi_Id">
+          <End Role="Courses" Type="Self.Courses" Multiplicity="1" />
+          <End Role="CourseAssignment" Type="Self.CourseAssignment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Courses">
+              <PropertyRef Name="CourseId" />
+            </Principal>
+            <Dependent Role="CourseAssignment">
+              <PropertyRef Name="CourseId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_CourseStu_Id">
+          <End Role="Courses" Type="Self.Courses" Multiplicity="1" />
+          <End Role="StudentCourse" Type="Self.StudentCourse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Courses">
+              <PropertyRef Name="CourseId" />
+            </Principal>
+            <Dependent Role="StudentCourse">
+              <PropertyRef Name="CourseId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_CourseTra_Id">
+          <End Role="Courses" Type="Self.Courses" Multiplicity="1" />
+          <End Role="TrainerCourse" Type="Self.TrainerCourse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Courses">
+              <PropertyRef Name="CourseId" />
+            </Principal>
+            <Dependent Role="TrainerCourse">
+              <PropertyRef Name="CourseId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Student_Id">
+          <End Role="Students" Type="Self.Students" Multiplicity="1" />
+          <End Role="StudentCourse" Type="Self.StudentCourse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Students">
+              <PropertyRef Name="StudentId" />
+            </Principal>
+            <Dependent Role="StudentCourse">
+              <PropertyRef Name="StudentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Student1_Id">
+          <End Role="Students" Type="Self.Students" Multiplicity="1" />
+          <End Role="AssignmentPerStudentPerCourse" Type="Self.AssignmentPerStudentPerCourse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Students">
+              <PropertyRef Name="StudentId" />
+            </Principal>
+            <Dependent Role="AssignmentPerStudentPerCourse">
+              <PropertyRef Name="StudentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_StudentAssign_Id">
+          <End Role="Students" Type="Self.Students" Multiplicity="1" />
+          <End Role="StudentAssignment" Type="Self.StudentAssignment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Students">
+              <PropertyRef Name="StudentId" />
+            </Principal>
+            <Dependent Role="StudentAssignment">
+              <PropertyRef Name="StudentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Trainer_Id">
+          <End Role="Trainers" Type="Self.Trainers" Multiplicity="1" />
+          <End Role="TrainerCourse" Type="Self.TrainerCourse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Trainers">
+              <PropertyRef Name="TrainerId" />
+            </Principal>
+            <Dependent Role="TrainerCourse">
+              <PropertyRef Name="TrainerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="CreateAssignment" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="TitleA" Type="char" Mode="In" />
+          <Parameter Name="Description" Type="char" Mode="In" />
+        </Function>
+        <Function Name="CreateCourse" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="TitleC" Type="char" Mode="In" />
+          <Parameter Name="Stream" Type="char" Mode="In" />
+          <Parameter Name="Type" Type="char" Mode="In" />
+          <Parameter Name="StartDate" Type="date" Mode="In" />
+          <Parameter Name="EndDate" Type="date" Mode="In" />
+        </Function>
+        <Function Name="CreateStudent" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="FirstName" Type="char" Mode="In" />
+          <Parameter Name="LastName" Type="char" Mode="In" />
+          <Parameter Name="DateOfBirth" Type="date" Mode="In" />
+          <Parameter Name="TutitionFees" Type="int" Mode="In" />
+        </Function>
+        <Function Name="CreateTrainer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="FirstName" Type="char" Mode="In" />
+          <Parameter Name="LastName" Type="char" Mode="In" />
+          <Parameter Name="Subject" Type="char" Mode="In" />
+        </Function>
+        <Function Name="InsertAssignmentPerStudentPerCourse" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="StudentId" Type="int" Mode="In" />
+          <Parameter Name="AssignmentId" Type="int" Mode="In" />
+          <Parameter Name="CourseId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="InsertStudentPerCourse" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="StudentId" Type="int" Mode="In" />
+          <Parameter Name="CourseId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="InsertTrainerPerCourse" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="TrainerId" Type="int" Mode="In" />
+          <Parameter Name="CourseId" Type="int" Mode="In" />
+        </Function>
+        <EntityContainer Name="Karamolegkos_PrivateSchoolModelStoreContainer">
+          <EntitySet Name="AssignmentPerStudentPerCourse" EntityType="Self.AssignmentPerStudentPerCourse" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Assignments" EntityType="Self.Assignments" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CourseAssignment" EntityType="Self.CourseAssignment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Courses" EntityType="Self.Courses" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StudentAssignment" EntityType="Self.StudentAssignment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StudentCourse" EntityType="Self.StudentCourse" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Students" EntityType="Self.Students" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TrainerCourse" EntityType="Self.TrainerCourse" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Trainers" EntityType="Self.Trainers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AllAssignments" EntityType="Self.AllAssignments" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [AllAssignments].[AssignmentId] AS [AssignmentId], 
+    [AllAssignments].[TitleA] AS [TitleA], 
+    [AllAssignments].[Description] AS [Description]
+    FROM [dbo].[AllAssignments] AS [AllAssignments]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="AllCourses" EntityType="Self.AllCourses" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [AllCourses].[CourseId] AS [CourseId], 
+    [AllCourses].[TitleC] AS [TitleC], 
+    [AllCourses].[Stream] AS [Stream], 
+    [AllCourses].[Type] AS [Type], 
+    [AllCourses].[StartDate] AS [StartDate], 
+    [AllCourses].[EndDate] AS [EndDate]
+    FROM [dbo].[AllCourses] AS [AllCourses]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="AllStudents" EntityType="Self.AllStudents" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [AllStudents].[StudentId] AS [StudentId], 
+    [AllStudents].[FirstName] AS [FirstName], 
+    [AllStudents].[LastName] AS [LastName], 
+    [AllStudents].[DateOfBirth] AS [DateOfBirth], 
+    [AllStudents].[TutitionFees] AS [TutitionFees]
+    FROM [dbo].[AllStudents] AS [AllStudents]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="AllTrainers" EntityType="Self.AllTrainers" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [AllTrainers].[TrainerId] AS [TrainerId], 
+    [AllTrainers].[FirstName] AS [FirstName], 
+    [AllTrainers].[LastName] AS [LastName], 
+    [AllTrainers].[Subject] AS [Subject]
+    FROM [dbo].[AllTrainers] AS [AllTrainers]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="AssignmentsPerCourse" EntityType="Self.AssignmentsPerCourse" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [AssignmentsPerCourse].[Course Title] AS [Course Title], 
+    [AssignmentsPerCourse].[Type] AS [Type], 
+    [AssignmentsPerCourse].[Stream] AS [Stream], 
+    [AssignmentsPerCourse].[Asssignment Title] AS [Asssignment Title], 
+    [AssignmentsPerCourse].[Description] AS [Description]
+    FROM [dbo].[AssignmentsPerCourse] AS [AssignmentsPerCourse]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="AssignmentsPerCoursePerStudent" EntityType="Self.AssignmentsPerCoursePerStudent" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [AssignmentsPerCoursePerStudent].[FirstName] AS [FirstName], 
+    [AssignmentsPerCoursePerStudent].[LastName] AS [LastName], 
+    [AssignmentsPerCoursePerStudent].[Course Title] AS [Course Title], 
+    [AssignmentsPerCoursePerStudent].[Type] AS [Type], 
+    [AssignmentsPerCoursePerStudent].[Assignment Title] AS [Assignment Title], 
+    [AssignmentsPerCoursePerStudent].[Description] AS [Description]
+    FROM [dbo].[AssignmentsPerCoursePerStudent] AS [AssignmentsPerCoursePerStudent]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="StudentsPerCourse" EntityType="Self.StudentsPerCourse" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [StudentsPerCourse].[TitleC] AS [TitleC], 
+    [StudentsPerCourse].[Type] AS [Type], 
+    [StudentsPerCourse].[Stream] AS [Stream], 
+    [StudentsPerCourse].[FirstName] AS [FirstName], 
+    [StudentsPerCourse].[LastName] AS [LastName]
+    FROM [dbo].[StudentsPerCourse] AS [StudentsPerCourse]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="StudentsWithMoreThanOneCourse" EntityType="Self.StudentsWithMoreThanOneCourse" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [StudentsWithMoreThanOneCourse].[FirstName] AS [FirstName], 
+    [StudentsWithMoreThanOneCourse].[LastName] AS [LastName], 
+    [StudentsWithMoreThanOneCourse].[Total Courses Selected] AS [Total Courses Selected]
+    FROM [dbo].[StudentsWithMoreThanOneCourse] AS [StudentsWithMoreThanOneCourse]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="TrainersPerCourse" EntityType="Self.TrainersPerCourse" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [TrainersPerCourse].[TitleC] AS [TitleC], 
+    [TrainersPerCourse].[Type] AS [Type], 
+    [TrainersPerCourse].[Stream] AS [Stream], 
+    [TrainersPerCourse].[FirstName] AS [FirstName], 
+    [TrainersPerCourse].[LastName] AS [LastName]
+    FROM [dbo].[TrainersPerCourse] AS [TrainersPerCourse]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="fk_Assign_Id" Association="Self.fk_Assign_Id">
+            <End Role="Assignments" EntitySet="Assignments" />
+            <End Role="StudentAssignment" EntitySet="StudentAssignment" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Assign1_Id" Association="Self.fk_Assign1_Id">
+            <End Role="Assignments" EntitySet="Assignments" />
+            <End Role="AssignmentPerStudentPerCourse" EntitySet="AssignmentPerStudentPerCourse" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Assignment_Id" Association="Self.fk_Assignment_Id">
+            <End Role="Assignments" EntitySet="Assignments" />
+            <End Role="CourseAssignment" EntitySet="CourseAssignment" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Course1_Id" Association="Self.fk_Course1_Id">
+            <End Role="Courses" EntitySet="Courses" />
+            <End Role="AssignmentPerStudentPerCourse" EntitySet="AssignmentPerStudentPerCourse" />
+          </AssociationSet>
+          <AssociationSet Name="fk_CourseAssi_Id" Association="Self.fk_CourseAssi_Id">
+            <End Role="Courses" EntitySet="Courses" />
+            <End Role="CourseAssignment" EntitySet="CourseAssignment" />
+          </AssociationSet>
+          <AssociationSet Name="fk_CourseStu_Id" Association="Self.fk_CourseStu_Id">
+            <End Role="Courses" EntitySet="Courses" />
+            <End Role="StudentCourse" EntitySet="StudentCourse" />
+          </AssociationSet>
+          <AssociationSet Name="fk_CourseTra_Id" Association="Self.fk_CourseTra_Id">
+            <End Role="Courses" EntitySet="Courses" />
+            <End Role="TrainerCourse" EntitySet="TrainerCourse" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Student_Id" Association="Self.fk_Student_Id">
+            <End Role="Students" EntitySet="Students" />
+            <End Role="StudentCourse" EntitySet="StudentCourse" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Student1_Id" Association="Self.fk_Student1_Id">
+            <End Role="Students" EntitySet="Students" />
+            <End Role="AssignmentPerStudentPerCourse" EntitySet="AssignmentPerStudentPerCourse" />
+          </AssociationSet>
+          <AssociationSet Name="fk_StudentAssign_Id" Association="Self.fk_StudentAssign_Id">
+            <End Role="Students" EntitySet="Students" />
+            <End Role="StudentAssignment" EntitySet="StudentAssignment" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Trainer_Id" Association="Self.fk_Trainer_Id">
+            <End Role="Trainers" EntitySet="Trainers" />
+            <End Role="TrainerCourse" EntitySet="TrainerCourse" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Karamolegkos_PrivateSchoolModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AssignmentPerStudentPerCourse">
+          <Key>
+            <PropertyRef Name="StudentId" />
+            <PropertyRef Name="AssignmentId" />
+            <PropertyRef Name="CourseId" />
+          </Key>
+          <Property Name="StudentId" Type="Int32" Nullable="false" />
+          <Property Name="AssignmentId" Type="Int32" Nullable="false" />
+          <Property Name="CourseId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Assignment" Relationship="Self.fk_Assign1_Id" FromRole="AssignmentPerStudentPerCourse" ToRole="Assignments" />
+          <NavigationProperty Name="Cours" Relationship="Self.fk_Course1_Id" FromRole="AssignmentPerStudentPerCourse" ToRole="Courses" />
+          <NavigationProperty Name="Student" Relationship="Self.fk_Student1_Id" FromRole="AssignmentPerStudentPerCourse" ToRole="Students" />
+        </EntityType>
+        <EntityType Name="Assignment">
+          <Key>
+            <PropertyRef Name="AssignmentId" />
+          </Key>
+          <Property Name="AssignmentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TitleA" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="40" FixedLength="true" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="AssignmentPerStudentPerCourses" Relationship="Self.fk_Assign1_Id" FromRole="Assignments" ToRole="AssignmentPerStudentPerCourse" />
+          <NavigationProperty Name="StudentAssignments" Relationship="Self.fk_Assign_Id" FromRole="Assignments" ToRole="StudentAssignment" />
+          <NavigationProperty Name="CourseAssignments" Relationship="Self.fk_Assignment_Id" FromRole="Assignments" ToRole="CourseAssignment" />
+        </EntityType>
+        <EntityType Name="CourseAssignment">
+          <Key>
+            <PropertyRef Name="CourseId" />
+            <PropertyRef Name="AssignmentId" />
+          </Key>
+          <Property Name="CourseId" Type="Int32" Nullable="false" />
+          <Property Name="AssignmentId" Type="Int32" Nullable="false" />
+          <Property Name="SubmissionDate" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="Assignment" Relationship="Self.fk_Assignment_Id" FromRole="CourseAssignment" ToRole="Assignments" />
+          <NavigationProperty Name="Cours" Relationship="Self.fk_CourseAssi_Id" FromRole="CourseAssignment" ToRole="Courses" />
+        </EntityType>
+        <EntityType Name="Cours">
+          <Key>
+            <PropertyRef Name="CourseId" />
+          </Key>
+          <Property Name="CourseId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TitleC" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Stream" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Type" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="StartDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="EndDate" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="AssignmentPerStudentPerCourses" Relationship="Self.fk_Course1_Id" FromRole="Courses" ToRole="AssignmentPerStudentPerCourse" />
+          <NavigationProperty Name="CourseAssignments" Relationship="Self.fk_CourseAssi_Id" FromRole="Courses" ToRole="CourseAssignment" />
+          <NavigationProperty Name="Students" Relationship="Self.StudentCourse" FromRole="Courses" ToRole="Students" />
+          <NavigationProperty Name="Trainers" Relationship="Self.TrainerCourse" FromRole="Courses" ToRole="Trainers" />
+        </EntityType>
+        <EntityType Name="StudentAssignment">
+          <Key>
+            <PropertyRef Name="StudentId" />
+            <PropertyRef Name="AssignmentId" />
+          </Key>
+          <Property Name="StudentId" Type="Int32" Nullable="false" />
+          <Property Name="AssignmentId" Type="Int32" Nullable="false" />
+          <Property Name="OralMark" Type="Int32" Nullable="false" />
+          <Property Name="TotalMark" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Assignment" Relationship="Self.fk_Assign_Id" FromRole="StudentAssignment" ToRole="Assignments" />
+          <NavigationProperty Name="Student" Relationship="Self.fk_StudentAssign_Id" FromRole="StudentAssignment" ToRole="Students" />
+        </EntityType>
+        <EntityType Name="Student">
+          <Key>
+            <PropertyRef Name="StudentId" />
+          </Key>
+          <Property Name="StudentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="LastName" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="DateOfBirth" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="TutitionFees" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="AssignmentPerStudentPerCourses" Relationship="Self.fk_Student1_Id" FromRole="Students" ToRole="AssignmentPerStudentPerCourse" />
+          <NavigationProperty Name="StudentAssignments" Relationship="Self.fk_StudentAssign_Id" FromRole="Students" ToRole="StudentAssignment" />
+          <NavigationProperty Name="Courses" Relationship="Self.StudentCourse" FromRole="Students" ToRole="Courses" />
+        </EntityType>
+        <EntityType Name="Trainer">
+          <Key>
+            <PropertyRef Name="TrainerId" />
+          </Key>
+          <Property Name="TrainerId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="LastName" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Subject" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Courses" Relationship="Self.TrainerCourse" FromRole="Trainers" ToRole="Courses" />
+        </EntityType>
+        <EntityType Name="AllAssignment">
+          <Key>
+            <PropertyRef Name="AssignmentId" />
+            <PropertyRef Name="TitleA" />
+            <PropertyRef Name="Description" />
+          </Key>
+          <Property Name="AssignmentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TitleA" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="40" FixedLength="true" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AllCours">
+          <Key>
+            <PropertyRef Name="CourseId" />
+            <PropertyRef Name="TitleC" />
+            <PropertyRef Name="Stream" />
+            <PropertyRef Name="Type" />
+            <PropertyRef Name="StartDate" />
+            <PropertyRef Name="EndDate" />
+          </Key>
+          <Property Name="CourseId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TitleC" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Stream" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Type" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="StartDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="EndDate" Type="DateTime" Nullable="false" Precision="0" />
+        </EntityType>
+        <EntityType Name="AllStudent">
+          <Key>
+            <PropertyRef Name="StudentId" />
+            <PropertyRef Name="FirstName" />
+            <PropertyRef Name="LastName" />
+            <PropertyRef Name="DateOfBirth" />
+            <PropertyRef Name="TutitionFees" />
+          </Key>
+          <Property Name="StudentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="LastName" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="DateOfBirth" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="TutitionFees" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AllTrainer">
+          <Key>
+            <PropertyRef Name="TrainerId" />
+            <PropertyRef Name="FirstName" />
+            <PropertyRef Name="LastName" />
+            <PropertyRef Name="Subject" />
+          </Key>
+          <Property Name="TrainerId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="LastName" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Subject" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AssignmentsPerCourse">
+          <Key>
+            <PropertyRef Name="Course_Title" />
+            <PropertyRef Name="Type" />
+            <PropertyRef Name="Stream" />
+          </Key>
+          <Property Name="Course_Title" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Type" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Stream" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Asssignment_Title" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="40" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="AssignmentsPerCoursePerStudent">
+          <Key>
+            <PropertyRef Name="FirstName" />
+            <PropertyRef Name="LastName" />
+            <PropertyRef Name="Course_Title" />
+            <PropertyRef Name="Type" />
+            <PropertyRef Name="Assignment_Title" />
+            <PropertyRef Name="Description" />
+          </Key>
+          <Property Name="FirstName" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="LastName" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Course_Title" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Type" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Assignment_Title" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="40" FixedLength="true" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="StudentsPerCourse">
+          <Key>
+            <PropertyRef Name="TitleC" />
+            <PropertyRef Name="Type" />
+            <PropertyRef Name="Stream" />
+          </Key>
+          <Property Name="TitleC" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Type" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Stream" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="FirstName" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+          <Property Name="LastName" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="StudentsWithMoreThanOneCourse">
+          <Key>
+            <PropertyRef Name="FirstName" />
+            <PropertyRef Name="LastName" />
+          </Key>
+          <Property Name="FirstName" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="LastName" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Total_Courses_Selected" Type="Int32" />
+        </EntityType>
+        <EntityType Name="TrainersPerCourse">
+          <Key>
+            <PropertyRef Name="TitleC" />
+            <PropertyRef Name="Type" />
+            <PropertyRef Name="Stream" />
+          </Key>
+          <Property Name="TitleC" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Type" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Stream" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="FirstName" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+          <Property Name="LastName" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <Association Name="fk_Assign1_Id">
+          <End Role="Assignments" Type="Self.Assignment" Multiplicity="1" />
+          <End Role="AssignmentPerStudentPerCourse" Type="Self.AssignmentPerStudentPerCourse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Assignments">
+              <PropertyRef Name="AssignmentId" />
+            </Principal>
+            <Dependent Role="AssignmentPerStudentPerCourse">
+              <PropertyRef Name="AssignmentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Course1_Id">
+          <End Role="Courses" Type="Self.Cours" Multiplicity="1" />
+          <End Role="AssignmentPerStudentPerCourse" Type="Self.AssignmentPerStudentPerCourse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Courses">
+              <PropertyRef Name="CourseId" />
+            </Principal>
+            <Dependent Role="AssignmentPerStudentPerCourse">
+              <PropertyRef Name="CourseId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Student1_Id">
+          <End Role="Students" Type="Self.Student" Multiplicity="1" />
+          <End Role="AssignmentPerStudentPerCourse" Type="Self.AssignmentPerStudentPerCourse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Students">
+              <PropertyRef Name="StudentId" />
+            </Principal>
+            <Dependent Role="AssignmentPerStudentPerCourse">
+              <PropertyRef Name="StudentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Assign_Id">
+          <End Role="Assignments" Type="Self.Assignment" Multiplicity="1" />
+          <End Role="StudentAssignment" Type="Self.StudentAssignment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Assignments">
+              <PropertyRef Name="AssignmentId" />
+            </Principal>
+            <Dependent Role="StudentAssignment">
+              <PropertyRef Name="AssignmentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Assignment_Id">
+          <End Role="Assignments" Type="Self.Assignment" Multiplicity="1" />
+          <End Role="CourseAssignment" Type="Self.CourseAssignment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Assignments">
+              <PropertyRef Name="AssignmentId" />
+            </Principal>
+            <Dependent Role="CourseAssignment">
+              <PropertyRef Name="AssignmentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_CourseAssi_Id">
+          <End Role="Courses" Type="Self.Cours" Multiplicity="1" />
+          <End Role="CourseAssignment" Type="Self.CourseAssignment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Courses">
+              <PropertyRef Name="CourseId" />
+            </Principal>
+            <Dependent Role="CourseAssignment">
+              <PropertyRef Name="CourseId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_StudentAssign_Id">
+          <End Role="Students" Type="Self.Student" Multiplicity="1" />
+          <End Role="StudentAssignment" Type="Self.StudentAssignment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Students">
+              <PropertyRef Name="StudentId" />
+            </Principal>
+            <Dependent Role="StudentAssignment">
+              <PropertyRef Name="StudentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="StudentCourse">
+          <End Role="Courses" Type="Self.Cours" Multiplicity="*" />
+          <End Role="Students" Type="Self.Student" Multiplicity="*" />
+        </Association>
+        <Association Name="TrainerCourse">
+          <End Role="Courses" Type="Self.Cours" Multiplicity="*" />
+          <End Role="Trainers" Type="Self.Trainer" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="Karamolegkos_PrivateSchoolEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AssignmentPerStudentPerCourses" EntityType="Self.AssignmentPerStudentPerCourse" />
+          <EntitySet Name="Assignments" EntityType="Self.Assignment" />
+          <EntitySet Name="CourseAssignments" EntityType="Self.CourseAssignment" />
+          <EntitySet Name="Courses" EntityType="Self.Cours" />
+          <EntitySet Name="StudentAssignments" EntityType="Self.StudentAssignment" />
+          <EntitySet Name="Students" EntityType="Self.Student" />
+          <EntitySet Name="Trainers" EntityType="Self.Trainer" />
+          <EntitySet Name="AllAssignments" EntityType="Self.AllAssignment" />
+          <EntitySet Name="AllCourses" EntityType="Self.AllCours" />
+          <EntitySet Name="AllStudents" EntityType="Self.AllStudent" />
+          <EntitySet Name="AllTrainers" EntityType="Self.AllTrainer" />
+          <EntitySet Name="AssignmentsPerCourses" EntityType="Self.AssignmentsPerCourse" />
+          <EntitySet Name="AssignmentsPerCoursePerStudents" EntityType="Self.AssignmentsPerCoursePerStudent" />
+          <EntitySet Name="StudentsPerCourses" EntityType="Self.StudentsPerCourse" />
+          <EntitySet Name="StudentsWithMoreThanOneCourses" EntityType="Self.StudentsWithMoreThanOneCourse" />
+          <EntitySet Name="TrainersPerCourses" EntityType="Self.TrainersPerCourse" />
+          <AssociationSet Name="fk_Assign1_Id" Association="Self.fk_Assign1_Id">
+            <End Role="Assignments" EntitySet="Assignments" />
+            <End Role="AssignmentPerStudentPerCourse" EntitySet="AssignmentPerStudentPerCourses" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Course1_Id" Association="Self.fk_Course1_Id">
+            <End Role="Courses" EntitySet="Courses" />
+            <End Role="AssignmentPerStudentPerCourse" EntitySet="AssignmentPerStudentPerCourses" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Student1_Id" Association="Self.fk_Student1_Id">
+            <End Role="Students" EntitySet="Students" />
+            <End Role="AssignmentPerStudentPerCourse" EntitySet="AssignmentPerStudentPerCourses" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Assign_Id" Association="Self.fk_Assign_Id">
+            <End Role="Assignments" EntitySet="Assignments" />
+            <End Role="StudentAssignment" EntitySet="StudentAssignments" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Assignment_Id" Association="Self.fk_Assignment_Id">
+            <End Role="Assignments" EntitySet="Assignments" />
+            <End Role="CourseAssignment" EntitySet="CourseAssignments" />
+          </AssociationSet>
+          <AssociationSet Name="fk_CourseAssi_Id" Association="Self.fk_CourseAssi_Id">
+            <End Role="Courses" EntitySet="Courses" />
+            <End Role="CourseAssignment" EntitySet="CourseAssignments" />
+          </AssociationSet>
+          <AssociationSet Name="fk_StudentAssign_Id" Association="Self.fk_StudentAssign_Id">
+            <End Role="Students" EntitySet="Students" />
+            <End Role="StudentAssignment" EntitySet="StudentAssignments" />
+          </AssociationSet>
+          <AssociationSet Name="StudentCourse" Association="Self.StudentCourse">
+            <End Role="Courses" EntitySet="Courses" />
+            <End Role="Students" EntitySet="Students" />
+          </AssociationSet>
+          <AssociationSet Name="TrainerCourse" Association="Self.TrainerCourse">
+            <End Role="Courses" EntitySet="Courses" />
+            <End Role="Trainers" EntitySet="Trainers" />
+          </AssociationSet>
+          <FunctionImport Name="CreateAssignment">
+            <Parameter Name="TitleA" Mode="In" Type="String" />
+            <Parameter Name="Description" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="CreateCourse">
+            <Parameter Name="TitleC" Mode="In" Type="String" />
+            <Parameter Name="Stream" Mode="In" Type="String" />
+            <Parameter Name="Type" Mode="In" Type="String" />
+            <Parameter Name="StartDate" Mode="In" Type="DateTime" />
+            <Parameter Name="EndDate" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="CreateStudent">
+            <Parameter Name="FirstName" Mode="In" Type="String" />
+            <Parameter Name="LastName" Mode="In" Type="String" />
+            <Parameter Name="DateOfBirth" Mode="In" Type="DateTime" />
+            <Parameter Name="TutitionFees" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="CreateTrainer">
+            <Parameter Name="FirstName" Mode="In" Type="String" />
+            <Parameter Name="LastName" Mode="In" Type="String" />
+            <Parameter Name="Subject" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="InsertAssignmentPerStudentPerCourse">
+            <Parameter Name="StudentId" Mode="In" Type="Int32" />
+            <Parameter Name="AssignmentId" Mode="In" Type="Int32" />
+            <Parameter Name="CourseId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="InsertStudentPerCourse">
+            <Parameter Name="StudentId" Mode="In" Type="Int32" />
+            <Parameter Name="CourseId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="InsertTrainerPerCourse">
+            <Parameter Name="TrainerId" Mode="In" Type="Int32" />
+            <Parameter Name="CourseId" Mode="In" Type="Int32" />
+          </FunctionImport>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Karamolegkos_PrivateSchoolModelStoreContainer" CdmEntityContainer="Karamolegkos_PrivateSchoolEntities">
+          <EntitySetMapping Name="AssignmentPerStudentPerCourses">
+            <EntityTypeMapping TypeName="Karamolegkos_PrivateSchoolModel.AssignmentPerStudentPerCourse">
+              <MappingFragment StoreEntitySet="AssignmentPerStudentPerCourse">
+                <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+                <ScalarProperty Name="AssignmentId" ColumnName="AssignmentId" />
+                <ScalarProperty Name="CourseId" ColumnName="CourseId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Assignments">
+            <EntityTypeMapping TypeName="Karamolegkos_PrivateSchoolModel.Assignment">
+              <MappingFragment StoreEntitySet="Assignments">
+                <ScalarProperty Name="AssignmentId" ColumnName="AssignmentId" />
+                <ScalarProperty Name="TitleA" ColumnName="TitleA" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CourseAssignments">
+            <EntityTypeMapping TypeName="Karamolegkos_PrivateSchoolModel.CourseAssignment">
+              <MappingFragment StoreEntitySet="CourseAssignment">
+                <ScalarProperty Name="CourseId" ColumnName="CourseId" />
+                <ScalarProperty Name="AssignmentId" ColumnName="AssignmentId" />
+                <ScalarProperty Name="SubmissionDate" ColumnName="SubmissionDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Courses">
+            <EntityTypeMapping TypeName="Karamolegkos_PrivateSchoolModel.Cours">
+              <MappingFragment StoreEntitySet="Courses">
+                <ScalarProperty Name="CourseId" ColumnName="CourseId" />
+                <ScalarProperty Name="TitleC" ColumnName="TitleC" />
+                <ScalarProperty Name="Stream" ColumnName="Stream" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StudentAssignments">
+            <EntityTypeMapping TypeName="Karamolegkos_PrivateSchoolModel.StudentAssignment">
+              <MappingFragment StoreEntitySet="StudentAssignment">
+                <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+                <ScalarProperty Name="AssignmentId" ColumnName="AssignmentId" />
+                <ScalarProperty Name="OralMark" ColumnName="OralMark" />
+                <ScalarProperty Name="TotalMark" ColumnName="TotalMark" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Students">
+            <EntityTypeMapping TypeName="Karamolegkos_PrivateSchoolModel.Student">
+              <MappingFragment StoreEntitySet="Students">
+                <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="TutitionFees" ColumnName="TutitionFees" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Trainers">
+            <EntityTypeMapping TypeName="Karamolegkos_PrivateSchoolModel.Trainer">
+              <MappingFragment StoreEntitySet="Trainers">
+                <ScalarProperty Name="TrainerId" ColumnName="TrainerId" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Subject" ColumnName="Subject" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AllAssignments">
+            <EntityTypeMapping TypeName="Karamolegkos_PrivateSchoolModel.AllAssignment">
+              <MappingFragment StoreEntitySet="AllAssignments">
+                <ScalarProperty Name="AssignmentId" ColumnName="AssignmentId" />
+                <ScalarProperty Name="TitleA" ColumnName="TitleA" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AllCourses">
+            <EntityTypeMapping TypeName="Karamolegkos_PrivateSchoolModel.AllCours">
+              <MappingFragment StoreEntitySet="AllCourses">
+                <ScalarProperty Name="CourseId" ColumnName="CourseId" />
+                <ScalarProperty Name="TitleC" ColumnName="TitleC" />
+                <ScalarProperty Name="Stream" ColumnName="Stream" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AllStudents">
+            <EntityTypeMapping TypeName="Karamolegkos_PrivateSchoolModel.AllStudent">
+              <MappingFragment StoreEntitySet="AllStudents">
+                <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="TutitionFees" ColumnName="TutitionFees" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AllTrainers">
+            <EntityTypeMapping TypeName="Karamolegkos_PrivateSchoolModel.AllTrainer">
+              <MappingFragment StoreEntitySet="AllTrainers">
+                <ScalarProperty Name="TrainerId" ColumnName="TrainerId" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Subject" ColumnName="Subject" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AssignmentsPerCourses">
+            <EntityTypeMapping TypeName="Karamolegkos_PrivateSchoolModel.AssignmentsPerCourse">
+              <MappingFragment StoreEntitySet="AssignmentsPerCourse">
+                <ScalarProperty Name="Course_Title" ColumnName="Course Title" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Stream" ColumnName="Stream" />
+                <ScalarProperty Name="Asssignment_Title" ColumnName="Asssignment Title" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AssignmentsPerCoursePerStudents">
+            <EntityTypeMapping TypeName="Karamolegkos_PrivateSchoolModel.AssignmentsPerCoursePerStudent">
+              <MappingFragment StoreEntitySet="AssignmentsPerCoursePerStudent">
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Course_Title" ColumnName="Course Title" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Assignment_Title" ColumnName="Assignment Title" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StudentsPerCourses">
+            <EntityTypeMapping TypeName="Karamolegkos_PrivateSchoolModel.StudentsPerCourse">
+              <MappingFragment StoreEntitySet="StudentsPerCourse">
+                <ScalarProperty Name="TitleC" ColumnName="TitleC" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Stream" ColumnName="Stream" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StudentsWithMoreThanOneCourses">
+            <EntityTypeMapping TypeName="Karamolegkos_PrivateSchoolModel.StudentsWithMoreThanOneCourse">
+              <MappingFragment StoreEntitySet="StudentsWithMoreThanOneCourse">
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Total_Courses_Selected" ColumnName="Total Courses Selected" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TrainersPerCourses">
+            <EntityTypeMapping TypeName="Karamolegkos_PrivateSchoolModel.TrainersPerCourse">
+              <MappingFragment StoreEntitySet="TrainersPerCourse">
+                <ScalarProperty Name="TitleC" ColumnName="TitleC" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Stream" ColumnName="Stream" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="StudentCourse" TypeName="Karamolegkos_PrivateSchoolModel.StudentCourse" StoreEntitySet="StudentCourse">
+            <EndProperty Name="Courses">
+              <ScalarProperty Name="CourseId" ColumnName="CourseId" />
+            </EndProperty>
+            <EndProperty Name="Students">
+              <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="TrainerCourse" TypeName="Karamolegkos_PrivateSchoolModel.TrainerCourse" StoreEntitySet="TrainerCourse">
+            <EndProperty Name="Courses">
+              <ScalarProperty Name="CourseId" ColumnName="CourseId" />
+            </EndProperty>
+            <EndProperty Name="Trainers">
+              <ScalarProperty Name="TrainerId" ColumnName="TrainerId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <FunctionImportMapping FunctionImportName="CreateAssignment" FunctionName="Karamolegkos_PrivateSchoolModel.Store.CreateAssignment" />
+          <FunctionImportMapping FunctionImportName="CreateCourse" FunctionName="Karamolegkos_PrivateSchoolModel.Store.CreateCourse" />
+          <FunctionImportMapping FunctionImportName="CreateStudent" FunctionName="Karamolegkos_PrivateSchoolModel.Store.CreateStudent" />
+          <FunctionImportMapping FunctionImportName="CreateTrainer" FunctionName="Karamolegkos_PrivateSchoolModel.Store.CreateTrainer" />
+          <FunctionImportMapping FunctionImportName="InsertAssignmentPerStudentPerCourse" FunctionName="Karamolegkos_PrivateSchoolModel.Store.InsertAssignmentPerStudentPerCourse" />
+          <FunctionImportMapping FunctionImportName="InsertStudentPerCourse" FunctionName="Karamolegkos_PrivateSchoolModel.Store.InsertStudentPerCourse" />
+          <FunctionImportMapping FunctionImportName="InsertTrainerPerCourse" FunctionName="Karamolegkos_PrivateSchoolModel.Store.InsertTrainerPerCourse" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
